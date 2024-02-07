@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import schema from "../schema";
 
 // interface Props {
 //   params: { id: number };
@@ -25,11 +26,12 @@ export async function PUT(
 ) {
   const body = await request.json();
 
-  if (!body.name) {
-    return NextResponse.json(
-      { error: "El nombre es obligatorio" },
-      { status: 400 }
-    );
+  //*Implementación de validaciones ZOD
+
+  const validation = schema.safeParse(body);
+
+  if (!validation.success) {
+    return NextResponse.json(validation.error.errors, { status: 400 });
   }
 
   if (params.id > 10) {

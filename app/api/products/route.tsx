@@ -1,25 +1,28 @@
-/**
- * GET - Obtener datos
- * POST - Crear dato
- * PUT - Actualizar dato
- * DELETE - Borrar dato
- */
-
 import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
 
 export function GET(request: NextRequest) {
   return NextResponse.json([
-    { id: 1, name: "José" },
-    { id: 2, name: "Clara" },
-    { id: 3, name: "Emma" },
+    {
+      id: 1,
+      name: "Lavadora",
+      price: 650000,
+    },
+    {
+      id: 2,
+      name: "Nevera",
+      price: 850000,
+    },
+    {
+      id: 3,
+      name: "Estufa",
+      price: 950000,
+    },
   ]);
 }
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
-
-  //*Implementación de validaciones ZOD
 
   const validation = schema.safeParse(body);
 
@@ -27,5 +30,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(validation.error.errors, { status: 404 });
   }
 
-  return NextResponse.json({ id: 1, name: body.name }, { status: 201 });
+  return NextResponse.json({ id: 10, name: body.name, price: body.price });
 }
