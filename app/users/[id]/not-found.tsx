@@ -3,7 +3,7 @@ import React from "react";
 const NotFoundUserPage = () => {
   return (
     <>
-      <h1>¡El usuario no fue encontrado!</h1>
+      <div>¡El usuario no fue encontrado!</div>
     </>
   );
 };

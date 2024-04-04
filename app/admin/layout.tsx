@@ -8,7 +8,7 @@ const LayoutAdmin = ({ children }: Props) => {
   return (
     <div className="flex">
       <aside className="bg-gray-600 text-white p-5">
-        Lateral Administración
+        Lateral/Administración
       </aside>
       <div>{children}</div>
     </div>

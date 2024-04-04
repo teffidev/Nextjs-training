@@ -7,7 +7,7 @@ const NewUserPage = () => {
 
   return (
     <button className="btn btn-primary" onClick={() => router.push("/users")}>
-      Crear nuevo Usuario
+      Crear nuevo usuario
     </button>
   );
 };

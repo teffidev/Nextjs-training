@@ -18,6 +18,6 @@ body {
 
 @layer base{
   h1{
-    @apply font-extrabold text-4xl;
+    @apply font-extrabold text-4xl pb-8;
   }
 }

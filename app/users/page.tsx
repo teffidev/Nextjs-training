@@ -2,7 +2,11 @@ import React from "react";
 import UserTable from "./UserTable";
 import Link from "next/link";
 
-const PageUsers = () => {
+interface Props{
+  searchParams: {userOrder: string}
+}
+
+const PageUsers = async ({searchParams: {userOrder}}: Props) => {
   return (
     <>
       <h1>Usuarios</h1>
@@ -10,7 +14,7 @@ const PageUsers = () => {
       <Link href={"/users/newUser"} className="btn btn-secondary">
         Nuevo usuario
       </Link>
-      <UserTable />
+      <UserTable userOrder={userOrder}/>
     </>
   );
 };

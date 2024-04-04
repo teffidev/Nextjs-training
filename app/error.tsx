@@ -3,7 +3,7 @@ import React from "react";
 
 interface Props {
   error: Error;
-  reset: () => void
+  reset: () => void;
 }
 
 const Error = ({ error, reset }: Props) => {
@@ -12,7 +12,9 @@ const Error = ({ error, reset }: Props) => {
   return (
     <>
       <h2>¡Ha ocurrido un error inesperado!</h2>
-      <button className="btn btn-info">Intentar de nuevo</button>
+      <div className="pt-5">
+        <button onClick={reset} className="btn btn-info">Intentar de nuevo</button>
+      </div>
     </>
   );
 };
